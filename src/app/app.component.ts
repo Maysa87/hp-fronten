@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HpService } from './services/hp.service';
 import { Component, importProvidersFrom } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -14,21 +16,33 @@ export class AppComponent {
 
   personagens: any[] = [];
 
-
+  searchName: string;
+  //searchHouse: string | null = null;
+  
   constructor(private hpService: HpService){
-    hpService.getHp({
-      name: '',
-      house: null,
-      bornDate: null
-    }).subscribe({
-      next: (personagens)=>{
+    this.searchName = "";
+    this.buscarPersonagens();
+  }
+
+  buscarPersonagens() {
+    let filtro:any = {};
+
+
+      filtro.name = this.searchName;
+      filtro.house = this.searchName;
+
+
+    this.hpService.getHpFiltroPersonagens(filtro).subscribe({
+      next: (personagens) => {
         this.personagens = personagens;
         console.log(personagens);
       },
-      error: ()=>{
-        alert("deu ruim");
+      error: () => {
+        alert("Erro ao buscar personagens");
       }
     });
-    
   }
+
+
 }
+
