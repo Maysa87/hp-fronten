@@ -47,13 +47,13 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(247, 214, 139, 0.153); // camada mágica sobre a imagem
+  background: rgba(240, 205, 123, 0.153); // camada mágica sobre a imagem
   z-index: 1;
 }
 
 .card-text {
-  font-size: 15px;
-  color: #2c2c2c;
+  font-size: 16px;
+  color: #542602;
   font-family: "Garamond", serif;
   padding-left: 16px;
 
@@ -62,7 +62,7 @@
 .card-title {
   font-family: 'Garamond', serif;
   font-size: 1.2rem;
-  color: #5b5076;
+  color: #562a01;
   font-weight: bold;
 }
 
@@ -73,7 +73,7 @@
   position: relative;
   z-index: 2;
   padding: 9px 19px 3px 19px;
-  border-radius: 26px 26px 0px 0px
+  border-radius: 30px 30px 0px 0px
 }
 
 .card-custom {
@@ -109,14 +109,22 @@
 }
 
 .card-front {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: rgb(252, 250, 246);
+  border: 1px solid #017245;
 }
 
 .card-back {
-  background: white;
+  background: rgb(250, 247, 243);
   border: 1px solid #e5e7eb;
   transform: rotateY(180deg);
+  padding: 19px 3px 3px 16px;
+}
+
+.card-back-text{
+  font-size: 18px;
+  color: #542602;
+  font-family: "Garamond", serif;
+
 }
 
 .detalhes-personagens {
@@ -129,5 +137,6 @@
 }
 
 .navbar-brand{
-  color:#ead89b;
+  color:#f9db93;
+  font-size: 1.5rem;
 }

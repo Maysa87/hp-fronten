@@ -5,17 +5,6 @@
     <form class="d-flex ms-auto">
       <input class="form-control me-2" type="search" placeholder="Buscar Personagem" [(ngModel)]="searchName"
         name="name" />
-
-      <!--  
-            <select class="form-select me-2" [(ngModel)]="searchHouse" name="house">
-        <option value="">Todas as Casas</option>
-        <option value="Grifinoria">Grifinoria</option>
-        <option value="Sonserina">Sonserina</option>
-        <option value="LufaLufa">LufaLufa</option>
-        <option value="Corvinal">Corvinal</option>
-      </select>
-    -->
-
       <button class="btn btn-outline-success" (click)="buscarPersonagens()">Buscar</button>
     </form>
   </div>
@@ -52,12 +41,16 @@
         <div class="card-back">
 
             <div class="row card-text">
-              <div class="col-6 d-flex justify-content-start"><span><b> Varinha: </b> </span></div>
+              <div class="card-back-text d-flex justify-content-start"><span><b> Casa: </b> </span></div>
+              <div class="col-6 d-flex justify-content-start"><span> {{ item.house }} </span> </div>
+            </div>
+            <div class="row card-text">
+              <div class="card-back-text d-flex justify-content-start"><span><b> Varinha: </b> </span></div>
               <div class="col-6 d-flex justify-content-start"><span> {{ item.varinha }} </span> </div>
             </div>
 
             <div class="row card-text">
-              <div class="col-6 d-flex justify-content-start"><span><b> Patrono: </b> </span></div>
+              <div class="card-back-text d-flex justify-content-start"><span><b> Patrono: </b> </span></div>
               <div class="col-6 d-flex justify-content-start"><span> {{ item.patrono }} </span> </div>
             </div>
         </div>
